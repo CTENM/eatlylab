@@ -1,13 +1,50 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EatlyLab</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>EatlyLab - 건강 진단기</title>
+    <link rel="manifest" href="manifest.json" />
+    <script defer src="script.js"></script>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 0; text-align: center; }
+        header { background: #ff6f61; color: white; padding: 1rem; font-size: 1.5rem; }
+        nav button { padding: 1rem; margin: 0.5rem; font-size: 1rem; }
+        .tab { display: none; padding: 1rem; }
+        .active { display: block; }
+        #result { margin-top: 1rem; }
+        input, select, button { padding: 0.5rem; margin: 0.5rem; }
+    </style>
 </head>
 <body>
-    <h1>Welcome to EatlyLab</h1>
-    <p>This is a lightweight web app to inspire your day.</p>
+    <header>🍱 EatlyLab 건강 진단기</header>
+    <nav>
+        <button onclick="showTab('calorie')">칼로리 진단기</button>
+        <button onclick="showTab('score')">영양 점수 진단기</button>
+        <button onclick="showTab('symptom')">증상 맞춤 음식 추천기</button>
+    </nav>
+
+    <!-- 칼로리 진단기 -->
+    <section id="calorie" class="tab active">
+        <h2>📸 음식 사진으로 칼로리 분석</h2>
+        <input type="file" id="calorieImage" accept="image/*" /><br/>
+        <input type="text" id="userFoodInput" placeholder="음식명을 직접 입력해보세요 (선택사항)" style="width:300px;" />
+        <br/>
+        <button onclick="diagnoseCalorie()">진단 시작</button>
+        <div id="calorieResult"></div>
+    </section>
+
+    <!-- 영양 점수 진단기 -->
+    <section id="score" class="tab">
+        <h2>📊 영양 점수 평가 (준비 중)</h2>
+        <p>이 기능은 다음 단계에서 활성화됩니다.</p>
+    </section>
+
+    <!-- 증상 맞춤 음식 추천기 -->
+    <section id="symptom" class="tab">
+        <h2>🩺 증상 맞춤 음식 추천 (준비 중)</h2>
+        <p>이 기능은 다음 단계에서 활성화됩니다.</p>
+    </section>
 </body>
 </html>
