@@ -1,7 +1,8 @@
 
 // 📌 여기에 본인의 API 키 입력하세요
 
-
+const visionApiKey = "YOUR_GOOGLE_VISION_API_KEY_HERE";
+const gptApiKey = "Bearer YOUR_OPENAI_API_KEY_HERE";
 function showTab(tabId) {
     document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
